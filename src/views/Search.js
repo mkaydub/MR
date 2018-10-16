@@ -47,7 +47,7 @@ export default class Search extends Component {
 			if ( returned.error ) {
 				return this.setState( { results: [] } );
 			} else {
-				res.forEach( b => {
+				returned.forEach( b => {
 					let i = this.state.books.filter( B => B.id === b.id );
 					if ( i[ 0 ] ) { b.shelf = i[ 0 ].shelf; }
 				} );
