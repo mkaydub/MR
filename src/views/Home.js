@@ -36,9 +36,9 @@ export default class Home extends Component {
       <div className="list-books-title">
         <h1>MyReads</h1>
       </div>
-      <Shelf></Shelf>
-      <Shelf></Shelf>
-      <Shelf></Shelf>
+      <Shelf name='Currently Reading' updateShelf = {this.updateShelf} books={this.state.books.filter(b => b.shelf === 'currentlyReading')}/>
+      <Shelf name='Want To Read' updateShelf = {this.updateShelf} books={this.state.books.filter(b => b.shelf === 'wantToRead')}/>
+      <Shelf name='Read' updateShelf = {this.updateShelf} books={this.state.books.filter(b => b.shelf === 'read')}/>
       <BookAddi></BookAddi>
     </div>
 		);
