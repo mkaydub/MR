@@ -73,7 +73,12 @@ export default class Search extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <ol className="books-grid">
+						{
+							this.state.results.map( (book,key) => <Book updateShelf = {this.updateShelf} book={book} key= {key}/>)
+						}
+					</ol>
+
         </div>
       </div>
 		);
