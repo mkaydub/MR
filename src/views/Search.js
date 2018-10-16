@@ -37,6 +37,26 @@ export default class Search extends Component {
 	updateQuery = ( query ) => {
 		this.setState( { query: query }, this.searchResults );
 	}
+
+	searchResults() {
+		if ( this.state.query === '' ||
+			this.state.query === undefined ) {
+			return this.setState( { results: [] } );
+		}
+		BooksAPI.search( this.state.query.trim() ).then( ( returned => {
+			if ( returned.error ) {
+				return this.setState( { results: [] } );
+			} else {
+				res.forEach( b => {
+					let i = this.state.books.filter( B => B.id === b.id );
+					if ( i[ 0 ] ) { b.shelf = i[ 0 ].shelf; }
+				} );
+				return this.setState( { results: returned } );
+			}
+		} ) );
+	}
+
+
 	render() {
 		return (
 			<div className="search-books">
