@@ -7,6 +7,14 @@ import '../App.css'
 
 
 export default class Search extends Component {
+	constructor() {
+		super();
+		this.state = {
+			books: [],
+			query: '',
+			results: []
+		}
+	}
 	render() {
 		return (
 			<div className="search-books">
