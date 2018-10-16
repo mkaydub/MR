@@ -9,7 +9,7 @@ export default class Book extends Component {
           <div className="book-top">
             <div className="book-cover"
               style={{ width: 128, height: 193,
-                backgroundImage: `url('${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || '' }')` }}>
+                backgroundImage: `url('${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : '' }')` }}>
             </div>
             <div className="book-shelf-changer">
               <select value= {this.props.book.shelf || "none"} onChange={(event) => {this.props.updateShelf(this.props.book, event.target.value)}}>
