@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import Book from './Book.js'
 
 export default class Shelf extends Component {
-	componentDidMount() {}
+	componentDidMount() {
+		console.log( 'mounted' );
+	}
 
 	render() {
 		return (

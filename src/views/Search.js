@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from '../BooksAPI'
 import Book from '../components/Book.js'
 import '../App.css'
-
+import PropTypes from 'prop-types';
 
 export default class Search extends Component {
+
 	constructor() {
 		super();
 		this.state = {
@@ -82,4 +83,10 @@ export default class Search extends Component {
       </div>
 		);
 	}
+}
+
+Search.propTypes = {
+	books: PropTypes.array,
+	updateShelf: PropTypes.func,
+	results: PropTypes.array
 }
