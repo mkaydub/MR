@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
+import noCoverImage from '../images/nocover.png'
 
 export default class Book extends Component {
 
 	render() {
+		const bookImage = this.props.book.imageLinks ?
+			this.props.book.imageLinks.thumbnail :
+			noCoverImage;
+
 		return (
 			<li>
         <div className="book">
           <div className="book-top">
             <div className="book-cover"
               style={{ width: 128, height: 193,
-                backgroundImage: `url('${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : '' }')` }}>
+                backgroundImage: `url('${bookImage}')` }}>
             </div>
             <div className="book-shelf-changer">
               <select value= {this.props.book.shelf || "none"} onChange={(event) => {this.props.updateShelf(this.props.book, event.target.value)}}>
