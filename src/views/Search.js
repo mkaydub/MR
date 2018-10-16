@@ -33,6 +33,10 @@ export default class Search extends Component {
 			} );
 
 	}
+
+	updateQuery = ( query ) => {
+		this.setState( { query: query }, this.searchResults );
+	}
 	render() {
 		return (
 			<div className="search-books">
