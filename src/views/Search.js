@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import * as BooksAPI from '../BooksAPI'
+import Book from '../components/Book.js'
+import Shelf from '../components/Shelf.js'
+import '../App.css'
+
 
 export default class Search extends Component {
 	render() {
