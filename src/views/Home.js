@@ -19,6 +19,17 @@ export default class Home extends Component {
 				this.setState( { books: allBooks } );
 			} );
 	}
+
+	updateShelf = ( book, shelf ) => {
+		BooksAPI.update( book, shelf )
+			.then( allBooks => {
+				book.shelf = shelf;
+				this.setState( state => ( {
+					books: state.books.filter( b => b.id !== book.id ).concat( [ book ] )
+				} ) )
+			} );
+	}
+
 	render() {
 		return (
 			<div className="list-books">
