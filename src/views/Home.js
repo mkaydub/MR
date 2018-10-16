@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Shelf from '../components/Shelf.js'
 import BookAddi from '../components/BookAddi.js'
+import * as BooksAPI from '../BooksAPI'
 
 
 export default class Home extends Component {
