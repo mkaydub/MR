@@ -78,8 +78,8 @@ export default class Search extends Component {
 							this.state.results.map( (book,key) =>
 							<Book
 								updateShelf = {this.updateShelf}
-								book= {this.props.book.title}
-								key= {this.props.book.id}
+								book= {book}
+								key= {key}
 								/>
 						)}
 					</ol>

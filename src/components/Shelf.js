@@ -18,13 +18,13 @@ export default class Shelf extends Component {
                   this.props.books.map((book, key) =>
                   <Book
                     updateShelf = {this.props.updateShelf}
-                    book={this.props.book.title}
-                    key= {this.props.book.id}
-                    />
+                    book={book}
+                    key= {key}/>
                 )}
               </ol>
             </div>
           </div>
+
         </div>
       </div>
 		);
