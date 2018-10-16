@@ -5,6 +5,14 @@ import * as BooksAPI from '../BooksAPI'
 
 
 export default class Home extends Component {
+
+	constructor() {
+		super();
+		this.state = {
+			books: []
+		}
+	}
+
 	render() {
 		return (
 			<div className="list-books">
