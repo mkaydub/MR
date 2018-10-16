@@ -15,12 +15,16 @@ export default class Shelf extends Component {
             <div className="bookshelf-books">
               <ol className="books-grid">
                 {
-                  this.props.books.map((book, key) => <Book updateShelf = {this.props.updateShelf} book={book} key= {key}/>)
-                }
+                  this.props.books.map((book, key) =>
+                  <Book
+                    updateShelf = {this.props.updateShelf}
+                    book={this.props.book.title}
+                    key= {this.props.book.id}
+                    />
+                )}
               </ol>
             </div>
           </div>
-
         </div>
       </div>
 		);
