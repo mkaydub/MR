@@ -3,6 +3,8 @@ import Book from './Book.js'
 import * as BooksAPI from '../BooksAPI.js'
 
 export default class Shelf extends Component {
+	componentDidMount() {}
+
 	render() {
 		return (
 			<div className="list-books-content">
