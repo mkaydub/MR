@@ -15,6 +15,13 @@ export default class Search extends Component {
 			results: []
 		}
 	}
+
+	componentDidMount() {
+		BooksAPI.getAll()
+			.then( allBooks => {
+				this.setState( { books: allBooks } )
+			} )
+	}
 	render() {
 		return (
 			<div className="search-books">
