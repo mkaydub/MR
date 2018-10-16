@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Book from './Book.js'
-import * as BooksAPI from '../BooksAPI.js'
 
 export default class Shelf extends Component {
 	componentDidMount() {}
