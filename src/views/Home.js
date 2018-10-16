@@ -13,6 +13,12 @@ export default class Home extends Component {
 		}
 	}
 
+	componentDidMount() {
+		BooksAPI.getAll()
+			.then( allBooks => {
+				this.setState( { books: allBooks } );
+			} );
+	}
 	render() {
 		return (
 			<div className="list-books">
