@@ -7,7 +7,6 @@ import Search from './views/Search.js'
 
 class BooksApp extends React.Component {
 
-
 	render() {
 		return (
 			<div>

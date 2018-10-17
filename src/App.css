@@ -90,6 +90,7 @@ body, .app {
 .search-books-input-wrapper {
   flex: 1;
   background: #9aecee;
+  padding-left: 2px;
 }
 
 .search-books-bar input {
@@ -109,7 +110,7 @@ body, .app {
   height: 53px;
   background: #fff;
   background-image: url('./icons/arrow-back.svg');
-  color: #47bad3;
+  color: #9aecee;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
@@ -118,6 +119,12 @@ body, .app {
 
 .search-books-results {
   padding: 80px 10px 20px;
+}
+
+.searchError {
+  text-align: center;
+  color: #47bad3;
+  font-family: 'Petit Formal Script';
 }
 
 /* books grid */
