@@ -12,7 +12,8 @@ export default class Search extends Component {
 		this.state = {
 			books: [],
 			query: '',
-			results: []
+			results: [],
+			searchError: false
 		}
 	}
 
@@ -41,23 +42,24 @@ export default class Search extends Component {
 	searchResults() {
 		if ( this.state.query === '' ||
 			this.state.query === undefined ) {
-			return this.setState( { results: [] } );
+			return this.setState( { results: [], searchError: false } );
 		}
 		BooksAPI.search( this.state.query.trim() ).then( ( returned => {
 			if ( returned.error ) {
-				return this.setState( { results: [] } );
+				return this.setState( { results: [], searchError: true } );
 			} else {
 				returned.forEach( b => {
 					let i = this.state.books.filter( B => B.id === b.id );
 					if ( i[ 0 ] ) { b.shelf = i[ 0 ].shelf; }
 				} );
-				return this.setState( { results: returned } );
+				return this.setState( { results: returned, searchError: false } );
 			}
 		} ) );
 	}
 
 
 	render() {
+		const { searchError } = this.state;
 		return (
 			<div className="search-books">
         <div className="search-books-bar">
@@ -84,6 +86,9 @@ export default class Search extends Component {
 						)}
 					</ol>
         </div>
+				{searchError && (
+					<h2 className="searchError">No Books in your Search! Try searching something else</h2>
+				)}
       </div>
 		);
 	}
