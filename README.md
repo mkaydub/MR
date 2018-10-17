@@ -9,6 +9,7 @@ Given the [starter template](https://github.com/mkaydub/reactnd-project-myreads-
 * start the development server with `npm start`
 
 ## Using the App:
+* You can click [here](http://mkaydub-myreads.surge.sh) to use this app!
 * Users can search for books and add them to book shelfs: 'Currently Reading', 'Want to Read', and 'Read'. From the home page, books can be moved to and from Shelfs or removed from shelfs completely.
 
 ## Important
@@ -24,3 +25,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * https://www.youtube.com/watch?v=acJHkd6K5kI
 * https://react.christmas/23
 * https://www.npmjs.com/search?q=keywords:react
+* https://medium.freecodecamp.org/surge-vs-github-pages-deploying-a-create-react-app-project-c0ecbf317089
