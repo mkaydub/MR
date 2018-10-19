@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import noCoverImage from '../images/nocover.png'
 
 export default class Book extends Component {
+	state = {}
 
 	render() {
 		const bookImage = this.props.book.imageLinks ?
@@ -20,7 +21,7 @@ export default class Book extends Component {
             <div className="book-shelf-changer">
               <select
                 value= {this.props.book.shelf || "none"}
-                onChange={(event) => {this.props.updateShelf(this.props.book, event.target.value)}}>
+                onChange={(event) => {this.props.onUpdateShelf(this.props.book, event.target.value)}}>
                 <option value="move" disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
