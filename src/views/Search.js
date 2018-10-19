@@ -17,22 +17,9 @@ export default class Search extends Component {
 		}
 	}
 
-	componentDidMount() {
-		BooksAPI.getAll()
-			.then( allBooks => {
-				this.setState( { books: allBooks } )
-			} )
-	}
-
-	updateShelf = ( book, shelf ) => {
-		BooksAPI.update( book, shelf )
-			.then( allBooks => {
-				book.shelf = shelf;
-				this.setState( state => ( {
-					books: state.books.filter( b => b.id !== book.id ).concat( [ book ] )
-				} ) )
-			} );
-
+	componentDidMount = () => {
+		this.props.onMountAllBooks();
+		console.log( 'mountedSearch' );
 	}
 
 	updateQuery = ( query ) => {
@@ -79,7 +66,7 @@ export default class Search extends Component {
 						{
 							this.state.results.map( (book,key) =>
 							<Book
-								updateShelf = {this.updateShelf}
+								onUpdateShelf = {this.props.onUpdateShelf}
 								book= {book}
 								key= {key}
 								/>
