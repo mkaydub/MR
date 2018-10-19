@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import Book from './Book.js'
 
 export default class Shelf extends Component {
-	componentDidMount() {
-		console.log( 'mounted' );
-	}
+	state = {}
 
 	render() {
 		return (
@@ -17,7 +15,7 @@ export default class Shelf extends Component {
                 {
                   this.props.books.map((book, key) =>
                   <Book
-                    updateShelf = {this.props.updateShelf}
+                    onUpdateShelf = {this.props.onUpdateShelf}
                     book={book}
                     key= {key}/>
                 )}
